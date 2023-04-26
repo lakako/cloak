@@ -42,15 +42,15 @@ defmodule Cloak.Mixfile do
   # Type "mix help deps" for more examples and options
   defp _deps do
     [
-      { :jason,             "~> 1.1"   },
-      { :yaml_elixir,       "~> 2.0"   },
-      { :ranch,             "~> 2.0"   },
-      { :gen_state_machine, "~> 3.0"   },
-      { :tortoise,          "~> 0.9"   },
-      { :blake3,            "~> 0.4.1" },
-      { :cachex,            "~> 3.0"   },
-      { :observer_cli, "~> 1.5", only: [:dev]  },
-      { :dialyxir,     "~> 1.0", only: [:dev], runtime: false }
+      { :jason,             "~> 1.4.0"   },
+      { :yaml_elixir,       "~> 2.9.0"   },
+      { :ranch,             "~> 2.1.0"   },
+      { :gen_state_machine, "~> 3.0.0"   },
+      { :tortoise,          "~> 0.10.0"   },
+      { :blake3,            "~> 1.0.1" },
+      { :cachex,            "~> 3.6.0"   },
+      { :observer_cli, "~> 1.7.4", only: [:dev]  },
+      { :dialyxir,     "~> 1.3.0", only: [:dev], runtime: false }
     ]
   end
 
