@@ -1,6 +1,6 @@
 defmodule HKDF do
   @moduledoc """
-  Provides a simple Hashed Message Authentication Code (HMAC)-based
+    Provides a simple Hashed Message Authentication Code (HMAC)-based
   key derivation function (HKDF).
 
   ## Process
@@ -25,7 +25,7 @@ defmodule HKDF do
   @type output_key_material :: binary
 
   @doc """
-  Dervice a key of a specific length using the specified hash function.
+      Dervice a key of a specific length using the specified hash function.
 
   An optional salt (extract phase) and/or info message (expand phase)
   can be supplied.
@@ -46,7 +46,7 @@ defmodule HKDF do
   end
 
   @doc """
-  Extract a psuedorandom key from an input key material.
+      Extract a psuedorandom key from an input key material.
 
   ## Example
 
@@ -65,7 +65,7 @@ defmodule HKDF do
   end
 
   @doc """
-  Expands a pseudorandom key to an output key material of a defined length.
+      Expands a pseudorandom key to an output key material of a defined length.
 
   ## Example
 

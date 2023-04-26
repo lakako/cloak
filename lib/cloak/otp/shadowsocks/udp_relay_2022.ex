@@ -13,7 +13,7 @@ defmodule Cloak.Shadowsocks.UDPRelay2022 do
     port:         nil,
     cipher:       nil,
     req_ports:    %{},
-    block_cipher: nil,
+    block_cipher: nil
   )
 
   def start_link(account) do
@@ -54,7 +54,7 @@ defmodule Cloak.Shadowsocks.UDPRelay2022 do
          c = %{ c | decoder: { subkey, nonce } },
          { :ok, _, decoded } <- Cipher.decode(c, body),
          <<0, timestamp::64, pad_len::16, _::bytes-size(pad_len), request_data::bytes>> when timestamp > now-30 <- decoded,
-         { :ok, req } <- Conn.parse_shadowsocks_request(request_data), 
+         { :ok, req } <- Conn.parse_shadowsocks_request(request_data),
          { :ok, req } <- Conn.udp_send(req)
     do
       req_ports = Map.put(state.req_ports, req.remote, { ip, rport, session_id, :os.system_time(:seconds) + @port_ttl })
@@ -149,4 +149,3 @@ defmodule Cloak.Shadowsocks.UDPRelay2022 do
   end
 
 end
-
