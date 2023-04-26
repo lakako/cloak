@@ -7,3 +7,7 @@ iex:
 .PHONY: docker
 docker:
 	docker build -t cloak .
+
+.PHONY: release
+release:
+	MIX_ENV=prod mix release
